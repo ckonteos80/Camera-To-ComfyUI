@@ -5,6 +5,10 @@ Real-time camera feed → ComfyUI generative pipeline
 A live generative art experiment built with [Processing](https://processing.org/) and [ComfyUI](https://github.com/comfyanonymous/ComfyUI).
 Captures a webcam feed, sends frames to ComfyUI via its REST API, and displays generated images side by side with the live input.
 
+## 📦 Download
+
+[![Download the latest build](https://img.shields.io/badge/Download-Latest_Windows_Build-brightgreen?style=for-the-badge&logo=windows)](https://github.com/YourUsername/CameraAI/releases/latest)
+
 ---
 
 ## 🧠 Concept
