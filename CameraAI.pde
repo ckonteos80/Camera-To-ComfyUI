@@ -351,7 +351,7 @@ JSONObject buildPatchedWorkflow(String comfyFilename) {
   // Your new exported workflow, with __INPUT__ placeholder for node 14 → "image"
   String workflow =
   "{"
-  + "\"3\":{\"inputs\":{\"seed\":560041135393003,\"steps\":30,\"cfg\":7,"
+  + "\"3\":{\"inputs\":{\"seed\":560041135393003,\"steps\":15,\"cfg\":7,"
   + "\"sampler_name\":\"dpmpp_2m\",\"scheduler\":\"karras\",\"denoise\":0.45,"
   + "\"model\":[\"4\",0],\"positive\":[\"6\",0],\"negative\":[\"7\",0],\"latent_image\":[\"15\",0]},"
   + "\"class_type\":\"KSampler\",\"_meta\":{\"title\":\"KSampler\"}},"
