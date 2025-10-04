@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Camera-To-ComfyUI | Real-Time Generative Art</title>
+  <style>
+    body {
+      background-color: #0d1117;
+      color: #f5f5f5;
+      font-family: 'Segoe UI', Roboto, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+    header {
+      text-align: center;
+      padding: 3rem 1rem 2rem;
+      background: linear-gradient(180deg, #141a22, #0d1117);
+      border-bottom: 1px solid #222;
+    }
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 0.5rem;
+    }
+    h2 {
+      margin-top: 2rem;
+      color: #58a6ff;
+    }
+    p {
+      max-width: 800px;
+      margin: 0.5rem auto;
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+    iframe {
+      display: block;
+      margin: 2rem auto;
+      border-radius: 12px;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
+      width: 90%;
+      max-width: 960px;
+      height: 540px;
+    }
+    section {
+      text-align: center;
+      padding: 1rem;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 auto;
+      max-width: 600px;
+    }
+    ul li {
+      padding: 0.4rem 0;
+    }
+    a.button {
+      display: inline-block;
+      margin: 1rem 0.5rem;
+      padding: 0.8rem 1.6rem;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      color: white;
+      transition: background 0.2s ease;
+    }
+    a.download {
+      background-color: #238636;
+    }
+    a.download:hover {
+      background-color: #2ea043;
+    }
+    a.github {
+      background-color: #58a6ff;
+    }
+    a.github:hover {
+      background-color: #1f6feb;
+    }
+    footer {
+      margin-top: 3rem;
+      text-align: center;
+      font-size: 0.9rem;
+      opacity: 0.6;
+      padding-bottom: 2rem;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>🎥 Camera-To-ComfyUI</h1>
+    <p>A real-time Processing + ComfyUI generative art experiment</p>
+  </header>
+
+  <section>
+    <iframe
+      src="https://player.vimeo.com/video/1053590293?badge=0&autopause=0&player_id=0&app_id=58479"
+      frameborder="0"
+      allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+      allowfullscreen
+      title="Camera-To-ComfyUI Demo"
+    ></iframe>
+  </section>
+
+  <section>
+    <h2>🧠 Concept</h2>
+    <p>
+      <strong>Camera-To-ComfyUI</strong> captures a live webcam feed in
+      <a href="https://processing.org/" target="_blank">Processing</a>, sends frames to
+      <a href="https://github.com/comfyanonymous/ComfyUI" target="_blank">ComfyUI</a> via REST API,
+      and displays the generated output beside the original feed — creating a feedback loop of live
+      AI-driven image generation.
+    </p>
+  </section>
+
+  <section>
+    <h2>🎨 Features</h2>
+    <ul>
+      <li>Real-time camera capture with Processing’s Video library</li>
+      <li>Live connection to ComfyUI API on <code>http://127.0.0.1:8000</code></li>
+      <li>Continuous or single-frame generation modes</li>
+      <li>Side-by-side display of live and AI-generated frames</li>
+      <li>Keyboard controls for camera, saving, and automation loops</li>
+      <li>Cross-platform Processing source and compiled Windows app</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>▶️ How to Run</h2>
+    <p><strong>Option 1: Run in Processing</strong></p>
+    <ul>
+      <li>Open <code>CameraAI.pde</code> in Processing 4.x</li>
+      <li>Ensure ComfyUI API is active at <code>http://127.0.0.1:8000</code></li>
+      <li>Load the workflow <code>CameraToComfy.json</code> from <em>ComfyUI_Workflow</em> folder</li>
+      <li>Press <strong>Run</strong></li>
+    </ul>
+    <p><strong>Option 2: Run the exported Windows app</strong></p>
+    <ul>
+      <li>Download and unzip the build below</li>
+      <li>Launch the executable inside <code>windows-amd64</code></li>
+      <li>Ensure ComfyUI API is running locally</li>
+    </ul>
+
+    <a
+      href="https://github.com/YOURUSERNAME/CameraAI/releases/latest"
+      target="_blank"
+      class="button download"
+      >⬇️ Download Latest Build</a
+    >
+    <a
+      href="https://github.com/YOURUSERNAME/CameraAI"
+      target="_blank"
+      class="button github"
+      >💻 View Source on GitHub</a
+    >
+  </section>
+
+  <section>
+    <h2>🧩 ComfyUI Workflow</h2>
+    <p>
+      Import the provided workflow:
+      <a
+        href="https://github.com/YOURUSERNAME/CameraAI/blob/main/ComfyUI_Workflow/CameraToComfy.json"
+        target="_blank"
+        >CameraToComfy.json</a
+      >. <br />
+      Open in ComfyUI → <strong>File → Load</strong>, verify nodes and checkpoints, and ensure the
+      server runs with <code>--listen</code> enabled.
+    </p>
+  </section>
+
+  <footer>
+    <p>
+      Created by <strong>Christos Konteos</strong> — Part of the
+      <em>ComfyUI × Processing</em> real-time art experiments. <br />
+      © 2025
+    </p>
+  </footer>
+</body>
+</html>
