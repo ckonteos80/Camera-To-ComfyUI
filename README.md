@@ -98,6 +98,7 @@ To use it:
 4. Start the ComfyUI server with `--listen` or ensure API mode is active.
 
 > 💡 This JSON is a portable version exported from ComfyUI (`File → Export`), containing no local file paths.
+<img width="1008" height="463" alt="image" src="https://github.com/user-attachments/assets/ab436f71-4b27-43f5-81fa-0edc90352ffd" />
 
 ---
 
