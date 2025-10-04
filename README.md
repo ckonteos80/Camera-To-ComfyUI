@@ -21,15 +21,9 @@ Each frame captured from the camera is:
 3. Downloaded and displayed beside the live camera view,
 4. Then automatically sends the next frame for continuous generation.
 
-Click to watch demo:
-<p align="center">
-  <a href="https://vimeo.com/1053590293" target="_blank">
-    <img src="https://github.com/user-attachments/assets/71523abd-8dd3-4d98-9f0d-256e94a17dec" alt="Demo GIF" width="480">
-  </a>
-</p>
-<p align="center">
-   <a href="https://vimeo.com/1053590293" target="_blank">Watch full HD demo on Vimeo</a>
-</p>
+![GIF-low](https://github.com/user-attachments/assets/8dcae54b-d2aa-4743-861c-4753c1d9c97d)
+
+
 ---
 
 ## ⚙️ Included Files
