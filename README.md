@@ -7,7 +7,7 @@ Captures a webcam feed, sends frames to ComfyUI via its REST API, and displays g
 
 ## 📦 Download
 
-[![Download the latest build](https://img.shields.io/badge/Download-Latest_Windows_Build-brightgreen?style=for-the-badge&logo=windows)](https://github.com/YourUsername/CameraAI/releases/latest)
+[![Download the latest build](https://img.shields.io/badge/Download-Latest_Windows_Build-brightgreen?style=for-the-badge&logo=windows)](https://github.com/ckonteos80/CameraAI/releases/latest)
 
 ---
 
