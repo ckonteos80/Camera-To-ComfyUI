@@ -22,9 +22,14 @@ Each frame captured from the camera is:
 4. Then automatically sends the next frame for continuous generation.
 
 Click to watch demo:
-[![Demo GIF](https://github.com/user-attachments/assets/71523abd-8dd3-4d98-9f0d-256e94a17dec)](https://vimeo.com/1124485543)
-
-
+<p align="center">
+  <a href="https://vimeo.com/1053590293" target="_blank">
+    <img src="https://github.com/user-attachments/assets/71523abd-8dd3-4d98-9f0d-256e94a17dec" alt="Demo GIF" width="480">
+  </a>
+</p>
+<p align="center">
+   <a href="https://vimeo.com/1053590293" target="_blank">Watch full HD demo on Vimeo</a>
+</p>
 ---
 
 ## ⚙️ Included Files
