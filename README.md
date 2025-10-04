@@ -58,7 +58,11 @@ CameraAI/
 | **S** | Save current frame as PNG                                             |
 | **G** | Single run → save → upload → run workflow → wait → download → display |
 | **L** | Start continuous loop (auto-generate after each completion)           |
-| **B** | Break continuous loop (stop after current job)                        |
+| **B** | Break continuous loop (stop aft
+
+https://github.com/user-attachments/assets/93c21db2-0f0a-4e9c-aa71-71191273f11d
+
+er current job)                        |
 | **H** | Quick ComfyUI health check                                            |
 
 ---
