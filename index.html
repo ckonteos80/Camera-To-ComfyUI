@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Camera-To-ComfyUI | Real-Time Generative Art</title>
+  <style>
+    :root {
+      --bg: #0d1117;
+      --fg: #f5f5f5;
+      --muted: #8b949e;
+      --accent: #58a6ff;
+      --line: #222;
+      --maxw: 1150px;
+      --base: 20px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
+    }
+
+    body {
+      font-size: var(--base);
+      line-height: 1.9;
+    }
+
+    header {
+      text-align: center;
+      padding: 3rem 1rem 2rem;
+      background: linear-gradient(180deg, #141a22, var(--bg));
+      border-bottom: 1px solid var(--line);
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin: .25rem 0 .75rem;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      color: var(--accent);
+      margin: 2.25rem 0 1rem;
+    }
+
+    .container {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    p, li {
+      color: var(--fg);
+      opacity: .92;
+    }
+
+    ul, ol {
+      max-width: 900px;
+      margin: 0 auto;
+      padding-left: 1.25rem;
+      text-align: left;
+    }
+
+    section {
+      text-align: center;
+      padding: 1.5rem 0;
+    }
+
+    .lead {
+      font-size: 1.2rem;
+      color: var(--muted);
+    }
+
+    iframe {
+      display: block;
+      margin: 1.5rem auto;
+      border-radius: 12px;
+      box-shadow: 0 0 25px rgba(0,0,0,.55);
+      width: 100%;
+      max-width: 960px;
+      height: 54vw;
+      max-height: 540px;
+    }
+
+    .feature-image {
+      display: block;
+      margin: 2.5rem auto;
+      border-radius: 12px;
+      max-width: 100%;
+      height: auto;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    }
+
+    a.button {
+      display: inline-block;
+      margin: .8rem .5rem 0;
+      padding: 1rem 1.6rem;
+      border-radius: 10px;
+      font-weight: 700;
+      text-decoration: none;
+      color: white;
+      transition: filter .2s;
+      font-size: 1rem;
+    }
+
+    a.download { background: #238636; }
+    a.download:hover { filter: brightness(1.1); }
+
+    a.github { background: #58a6ff; }
+    a.github:hover { filter: brightness(1.1); }
+
+    footer {
+      margin-top: 3rem;
+      text-align: center;
+      font-size: 1rem;
+      color: var(--muted);
+      padding: 2rem 0;
+    }
+
+    @media (max-width: 520px) {
+      h1 { font-size: 2.3rem; }
+      h2 { font-size: 1.5rem; }
+      :root { --base: 18px; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>🎥 Camera-To-ComfyUI</h1>
+    <p class="lead">A real-time Processing + ComfyUI image generative experiment</p>
+  </header>
+
+  <main class="container">
+    <section>
+      <iframe
+        src="https://player.vimeo.com/video/1124485543?badge=0&autopause=0&player_id=0&app_id=58479"
+        frameborder="0"
+        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+        allowfullscreen
+        title="Camera-To-ComfyUI Demo"
+      ></iframe>
+    </section>
+
+    <section>
+      <h2>🧠 Concept</h2>
+      <p>
+        <strong>Camera-To-ComfyUI</strong> captures a live webcam feed in
+        <a href="https://processing.org/" target="_blank">Processing</a>, sends frames to
+        <a href="https://github.com/comfyanonymous/ComfyUI" target="_blank">ComfyUI</a> via REST API,
+        and displays the generated output beside the original feed — creating a feedback loop of live
+        AI-driven image generation.
+      </p>
+
+      <!-- Added showcase image -->
+      <img
+        src="https://github.com/user-attachments/assets/ab436f71-4b27-43f5-81fa-0edc90352ffd"
+        alt="Camera-To-ComfyUI Workflow"
+        class="feature-image"
+      />
+    </section>
+
+    <section>
+      <h2>🎨 Features</h2>
+      <ul>
+        <li>Real-time camera capture with Processing’s Video library</li>
+        <li>Live connection to ComfyUI API on <code>http://127.0.0.1:8000</code></li>
+        <li>Continuous or single-frame generation modes</li>
+        <li>Side-by-side display of live and AI-generated frames</li>
+        <li>Keyboard controls for camera, saving, and automation loops</li>
+        <li>Cross-platform Processing source and compiled Windows app</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>▶️ How to Run</h2>
+      <p><strong>Option 1: Run in Processing</strong></p>
+      <ul>
+        <li>Open <code>CameraAI.pde</code> in Processing 4.x</li>
+        <li>Ensure ComfyUI API is active at <code>http://127.0.0.1:8000</code></li>
+        <li>Load the workflow <code>CameraToComfy.json</code> from <em>ComfyUI_Workflow</em> folder</li>
+        <li>Press <strong>Run</strong></li>
+      </ul>
+      <p><strong>Option 2: Run the exported Windows app</strong></p>
+      <ul>
+        <li>Download and unzip the build below</li>
+        <li>Launch the executable inside <code>windows-amd64</code></li>
+        <li>Ensure ComfyUI API is running locally</li>
+      </ul>
+
+      <a
+        href="https://github.com/ckonteos80/CameraAI/releases/latest"
+        target="_blank"
+        class="button download"
+      >⬇️ Download Latest Build</a>
+      <a
+        href="https://github.com/ckonteos80/CameraAI"
+        target="_blank"
+        class="button github"
+      >💻 View Source on GitHub</a>
+    </section>
+
+    <section>
+      <h2>🧩 ComfyUI Workflow</h2>
+      <p>
+        Import the provided workflow:
+        <a
+          href="https://github.com/ckonteos80/CameraAI/blob/main/ComfyUI_Workflow/CameraToComfy.json"
+          target="_blank"
+        >CameraToComfy.json</a>.
+        <br>
+        Open in ComfyUI → <strong>File → Load</strong>, verify nodes and checkpoints, and ensure the
+        server runs with <code>--listen</code> enabled.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Created by <strong>Christos Konteos</strong></p>
+  </footer>
+</body>
+</html>
