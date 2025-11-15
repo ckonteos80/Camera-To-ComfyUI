@@ -94,6 +94,66 @@
       max-width: 100%;
       height: auto;
       box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .feature-image:hover {
+      transform: scale(1.02);
+      box-shadow: 0 0 40px rgba(88, 166, 255, 0.6);
+    }
+
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      cursor: pointer;
+      animation: fadeIn 0.2s;
+    }
+
+    .lightbox.active {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox img {
+      max-width: 95%;
+      max-height: 95%;
+      object-fit: contain;
+      border-radius: 8px;
+      box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
+      cursor: default;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 35px;
+      color: #f5f5f5;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: color 0.2s;
+      z-index: 10000;
+    }
+
+    .lightbox-close:hover {
+      color: var(--accent);
+    }
+
+    body.lightbox-open {
+      overflow: hidden;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
 
     a.button {
@@ -223,5 +283,55 @@
   <footer>
     <p>Created by <strong>Christos Konteos</strong></p>
   </footer>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox">
+    <span class="lightbox-close">&times;</span>
+    <img id="lightbox-img" src="" alt="Enlarged view">
+  </div>
+
+  <script>
+    // Get lightbox elements
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const closeBtn = document.querySelector('.lightbox-close');
+    const featureImages = document.querySelectorAll('.feature-image');
+
+    // Open lightbox when clicking on any feature image
+    featureImages.forEach(img => {
+      img.addEventListener('click', function() {
+        lightbox.classList.add('active');
+        lightboxImg.src = this.src;
+        lightboxImg.alt = this.alt;
+        document.body.classList.add('lightbox-open');
+      });
+    });
+
+    // Close lightbox function
+    function closeLightbox() {
+      lightbox.classList.remove('active');
+      document.body.classList.remove('lightbox-open');
+    }
+
+    // Close when clicking the × button
+    closeBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      closeLightbox();
+    });
+
+    // Close when clicking the background (but not the image)
+    lightbox.addEventListener('click', function(e) {
+      if (e.target === lightbox) {
+        closeLightbox();
+      }
+    });
+
+    // Close when pressing Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+        closeLightbox();
+      }
+    });
+  </script>
 </body>
 </html>
